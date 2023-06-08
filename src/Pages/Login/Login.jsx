@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle("Login")
   const [show, setShow] = useState(false);
 
   const loginImg =
@@ -67,7 +69,9 @@ const Login = () => {
               errors.password ? "border-red-500" : ""
             }`}
             {...register("password", {
-              required: "Password is required",
+              required: "Password Field is required",
+              minLength: 6,
+              pattern: !/[A-Z]/,
             })}
           />
           <span
@@ -80,6 +84,8 @@ const Login = () => {
           {errors.password && (
             <span className='text-red-500'>{errors.password.message}</span>
           )}
+
+          <br />
         </div>
         {/*         
         <span className='text-sm mb-4 mt-2'>
@@ -94,17 +100,17 @@ const Login = () => {
           Login
         </button>
         <div className='text-center mt-4 space-x-4 text-[#49BBBD]'>
-          <button type='button' className='p-3 rounded-full bg-slate-100'>
+          <button type='button' className='p-3 rounded bg-slate-100'>
             <FaFacebook />
           </button>
           <button
             type='button'
             // onClick={handleGoogleSignIn}
-            className='p-3 rounded-full bg-slate-100'
+            className='p-3 rounded bg-slate-100'
           >
             <FaGoogle />
           </button>
-          <button className='p-3 rounded-full bg-slate-100'>
+          <button type="button" className='p-3 rounded bg-slate-100'>
             <FaLinkedin />
           </button>
         </div>

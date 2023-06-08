@@ -1,7 +1,15 @@
 import React from "react";
+import Banner from "../../Components/Banner";
+import useTitle from "../../Hooks/useTitle";
 
 const Home = () => {
-  return <div className='max-w-7xl mx-auto h-screen'>Home</div>;
+  useTitle("Home");
+
+  return (
+    <>
+      <Banner></Banner>
+    </>
+  );
 };
 
 export default Home;

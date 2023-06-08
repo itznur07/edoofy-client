@@ -4,7 +4,7 @@ import useTitle from "../../Hooks/useTitle";
 
 const NotFound = () => {
 
-  useTitle("Page Not Found");
+  useTitle("404");
 
   return (
     <div className='flex flex-col items-center justify-center h-screen'>

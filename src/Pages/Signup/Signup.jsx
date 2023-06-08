@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
-
+  useTitle("Create an account");
   const loginImg =
     "https://images.unsplash.com/photo-1604872441539-ef1db9b25f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80";
 
@@ -191,17 +192,17 @@ const Signup = () => {
           Signup
         </button>
         <div className='text-center mt-3 space-x-4 text-[#49BBBD]'>
-          <button className='p-3 rounded-full bg-slate-100'>
+          <button type='button' className='p-3 rounded bg-slate-100'>
             <FaFacebook />
           </button>
           <button
             type='button'
             // onClick={handleGoogleSignIn}
-            className='p-3 rounded-full bg-slate-100'
+            className='p-3 rounded bg-slate-100'
           >
             <FaGoogle />
           </button>
-          <button className='p-3 rounded-full bg-slate-100'>
+          <button type='button' className='p-3 rounded bg-slate-100'>
             <FaLinkedin />
           </button>
         </div>
