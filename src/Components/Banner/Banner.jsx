@@ -1,3 +1,4 @@
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -6,13 +7,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Banner = () => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto mb-5 pb-5'>
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        modules={[Pagination, Navigation]}
       >
         <SwiperSlide>
           <div

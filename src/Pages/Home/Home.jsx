@@ -1,5 +1,6 @@
 import React from "react";
-import Banner from "../../Components/Banner";
+import Banner from "../../Components/Banner/Banner";
+import PopularClass from "../../Components/PopularClasses/PopularClass";
 import useTitle from "../../Hooks/useTitle";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
   return (
     <>
       <Banner></Banner>
+      <PopularClass></PopularClass>
     </>
   );
 };
