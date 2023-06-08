@@ -15,6 +15,36 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
+  // Password validation function
+  const validatePassword = (password) => {
+    // Check if password is at least 6 characters long
+    if (password.length < 6) {
+      return "Password must be at least 6 characters long";
+    }
+    // Check if password has a capital letter
+    if (!/[A-Z]/.test(password)) {
+      return "Password must have a capital letter";
+    }
+    // Check if password has a special character
+    if (!/[!@#$%^&*]/.test(password)) {
+      return "Password must have a special character";
+    }
+    // If all checks pass, return true
+    return true;
+  };
+
+  // Confirm password validation function
+  const validateConfirmPassword = (confirmPassword) => {
+    // Get the value of the password field
+    const password = document.getElementById("password").value;
+    // Check if confirm password matches password
+    if (confirmPassword !== password) {
+      return "Passwords do not match";
+    }
+    // If check passes, return true
+    return true;
+  };
+
   const handleSignUp = ({ email, password, name, photo }) => {
     const userInfo = {
       email,
@@ -93,7 +123,8 @@ const Signup = () => {
               errors.password ? "border-red-500" : ""
             }`}
             {...register("password", {
-              required: "Password is required",
+              required: true,
+              validate: validatePassword,
             })}
           />
           <span
@@ -109,25 +140,28 @@ const Signup = () => {
         </div>
         <div className='mb-2'>
           <label
-            htmlFor='password'
+            htmlFor='confirmPassword'
             className='block text-gray-700 font-bold mb-2'
           >
             Confirm Password
           </label>
           <input
             type={`${show === true ? "text" : "password"}`}
-            name='cpassword'
-            id='cpassword'
+            name='confirmPassword'
+            id='confirmPassword'
             className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent ${
               errors.password ? "border-red-500" : ""
             }`}
-            {...register("cpassword", {
-              required: "Confirm Password is required",
+            {...register("confirmPassword", {
+              required: true,
+              validate: validateConfirmPassword,
             })}
           />
           <br />
-          {errors.cpassword && (
-            <span className='text-red-500'>{errors.cpassword.message}</span>
+          {errors.confirmPassword && (
+            <span className='text-red-500'>
+              {errors.confirmPassword.message}
+            </span>
           )}
         </div>
         <div className='mb-4'>
