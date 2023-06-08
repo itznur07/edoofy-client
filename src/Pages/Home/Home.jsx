@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../../Components/Banner/Banner";
 import PopularClass from "../../Components/PopularClasses/PopularClass";
+import PopularInstructors from "../../Components/PopularInstructors/PopularInstructors";
 import useTitle from "../../Hooks/useTitle";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     <>
       <Banner></Banner>
       <PopularClass></PopularClass>
+      <PopularInstructors></PopularInstructors>
     </>
   );
 };
