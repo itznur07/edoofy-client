@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Footer top */}
           <div className='flex items-center space-x-4'>
             {/* Logo */}
-            <img src='/logo.png' alt='Logo' className='h-12' />
+            <h1 className='text-2xl font-bold text-[#49BBBD]'>Edoofy</h1>
             {/* Tagline */}
             <p className='text-sm font-semibold'>
               The best place to find your next adventure
@@ -27,7 +27,7 @@ const Footer = () => {
             {/* Subscribe button */}
             <button
               type='button'
-              className='bg-blue-500 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-600 transition duration-300'
+              className='bg-[#49BBBD] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-600 transition duration-300'
             >
               Subscribe
             </button>
@@ -93,7 +93,7 @@ const Footer = () => {
           </ul>
           {/* Copyrigth */}
           <p className='text-sm font-semibold'>
-            &copy; 2023 Material Tailwind. All Rights Reserved.
+            &copy; All Rights Reserved by nuruddin.
           </p>
         </div>
       </footer>

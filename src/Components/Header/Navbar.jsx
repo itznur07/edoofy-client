@@ -8,14 +8,14 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className='bg-white shadow-lg'>
-        <div className=' max-w-7xl mx-auto'>
+      <nav className='bg-white'>
+        <div className='max-w-7xl mx-auto md:px-0 px-5'>
           <div className='flex justify-between'>
             <div className='flex space-x-7'>
               <div>
                 {/* Website Logo */}
                 <Link to='/' className='flex items-center py-4 '>
-                  <span className='font-semibold text-gray-500 text-lg'>
+                  <span className='font-bold text-[#49BBBD] text-xl'>
                     Edoofy
                   </span>
                 </Link>
@@ -24,19 +24,19 @@ const Navbar = () => {
               <div className='hidden md:flex items-center space-x-1'>
                 <Link
                   to='/'
-                  className='py-4 px-2 text-gray-500 border-b-4 border-transparent hover:border-b-4 hover:border-blue-500'
+                  className='py-2 px-2 text-gray-500 border-b-4 border-transparent hover:border-b-4 hover:border-[#49BBBD]'
                 >
                   Home
                 </Link>
                 <Link
                   to='/instructors'
-                  className='py-4 px-2 text-gray-500 border-b-4 border-transparent hover:border-b-4 hover:border-blue-500'
+                  className='py-2 px-2 text-gray-500 border-b-4 border-transparent hover:border-b-4 hover:border-[#49BBBD]'
                 >
                   Instructors
                 </Link>
                 <Link
                   to='/classes'
-                  className='py-4 px-2 text-gray-500 border-b-4 border-transparent hover:border-b-4 hover:border-blue-500'
+                  className='py-2 px-2 text-gray-500 border-b-4 border-transparent hover:border-b-4 hover:border-[#49BBBD]'
                 >
                   Classes
                 </Link>
@@ -58,7 +58,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   to='/login'
-                  className='py-2 px-2 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300'
+                  className='py-2 px-4 font-medium text-white bg-[#49BBBD] rounded hover:bg-blue-400 transition duration-300'
                 >
                   Login
                 </Link>
