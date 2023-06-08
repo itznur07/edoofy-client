@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
+import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [show, setShow] = useState(false);
+
   const loginImg =
     "https://images.unsplash.com/photo-1604872441539-ef1db9b25f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80";
 
@@ -17,7 +20,7 @@ const Login = () => {
   };
 
   return (
-    <div className='flex max-w-7xl mx-auto justify-center h-screen items-center'>
+    <div className='flex max-w-7xl mx-auto justify-center py-14 items-center'>
       <div>
         <img className='rounded' src={loginImg} alt='person' />
       </div>
@@ -25,7 +28,7 @@ const Login = () => {
         onSubmit={handleSubmit(handleSignIn)}
         className='bg-white p-20 px-28 '
       >
-        <h2 className='text-3xl text-center uppercase font-semibold text-gray-800 mb-10'>
+        <h2 className='text-3xl text-center  font-semibold text-gray-800 mb-10'>
           Login
         </h2>
         <div className='mb-4'>
@@ -36,7 +39,7 @@ const Login = () => {
             type='email'
             name='email'
             id='email'
-            className={`w-72 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent ${
               errors.email ? "border-red-500" : ""
             }`}
             {...register("email", {
@@ -57,16 +60,22 @@ const Login = () => {
             Password
           </label>
           <input
-            type='password'
+            type={`${show === true ? "text" : "password"}`}
             name='password'
             id='password'
-            className={`w-72 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+            className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent ${
               errors.password ? "border-red-500" : ""
             }`}
             {...register("password", {
               required: "Password is required",
             })}
           />
+          <span
+            onClick={() => setShow(!show)}
+            className='absolute mt-3 mx-3 cursor-pointer text-[#49BBBD]'
+          >
+            <FaEye size={18}></FaEye>
+          </span>
           <br />
           {errors.password && (
             <span className='text-red-500'>{errors.password.message}</span>

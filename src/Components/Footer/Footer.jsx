@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className='bg-gray-800'>
       {" "}
-      <footer className=' text-white max-w-7xl mx-auto'>
+      <footer className=' text-white max-w-7xl mx-auto py-5'>
         <div className=' py-4 flex flex-wrap justify-between items-center'>
           {/* Footer top */}
           <div className='flex items-center space-x-4'>
@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
           </div>
           {/* Footer middle */}
-          <div className='flex items-center space-x-4 mt-4 md:mt-0'>
+          <div className='flex items-center space-x-4 mt-8 md:mt-0'>
             {/* Newsletter input field */}
             <input
               type='email'
