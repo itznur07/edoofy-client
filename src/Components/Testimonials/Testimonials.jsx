@@ -51,7 +51,7 @@ const Testimonials = () => {
     <div className='max-w-7xl mx-auto md:px-0 md:py-0 px-4 py-5 my-10'>
       <SectionTitle title='What our client say'></SectionTitle>
       <Swiper {...settings} modules={[Pagination, Navigation]}>
-        <div className='grid md:grid-cols-3 gap-4'>
+        <div className='grid md:grid-cols-3 grid-cols-1 gap-4'>
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial?.name}>
               <TestimonialCard key={testimonial.name} {...testimonial} />

@@ -29,7 +29,7 @@ const Banner = () => {
                 <p className='text-2xl mt-4'>
                   Join our community of learners and experts
                 </p>
-                <button className='bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg mt-8'>
+                <button className='bg-[#49BBBD] hover:bg-[#00484a] px-8 py-4 rounded-lg mt-8'>
                   Get Started
                 </button>
               </div>
@@ -51,7 +51,7 @@ const Banner = () => {
                 <p className='text-2xl mt-4'>
                   Find the best course for your needs and goals
                 </p>
-                <button className='bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg mt-8'>
+                <button className='bg-[#49BBBD] hover:bg-[#0a5658] px-8 py-4 rounded-lg mt-8'>
                   Browse Courses
                 </button>
               </div>
@@ -73,7 +73,7 @@ const Banner = () => {
                 <p className='text-2xl mt-4'>
                   Become a teacher and earn money by creating courses
                 </p>
-                <button className='bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg mt-8'>
+                <button className='bg-[#49BBBD] hover:bg-[#014748] px-8 py-4 rounded-lg mt-8'>
                   Teach Online
                 </button>
               </div>

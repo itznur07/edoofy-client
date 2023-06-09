@@ -4,9 +4,10 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const instructors = [
   {
     id: 1,
-    name: "John Doe",
-    email: "johndoe@example.com",
-    image: "https://source.unsplash.com/featured/?developer[1]",
+    name: "Faria Khan",
+    email: "fariakhan@example.com",
+    image:
+      "https://images.unsplash.com/photo-1630091003936-aea522c1e8c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTY4NjMxMTMxNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     numClassesTaken: 5,
     classesTaken: ["HTML5", "CSS3", "Javascript"],
   },
@@ -14,7 +15,8 @@ const instructors = [
     id: 2,
     name: "Rohan row",
     email: "rowhan@example.com",
-    image: "https://source.unsplash.com/featured/?developer[2]",
+    image:
+      "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTY4NjMxMDg5MQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     numClassesTaken: 3,
     classesTaken: ["Reactjs", "Tailwindcss"],
   },
@@ -22,7 +24,8 @@ const instructors = [
     id: 3,
     name: "Bob Smith",
     email: "bobsmith@example.com",
-    image: "https://source.unsplash.com/featured/?developer[3]",
+    image:
+      "https://images.unsplash.com/photo-1604145559206-e3bce0040e2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTY4NjMxMDk0NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     numClassesTaken: 2,
     classesTaken: ["Python"],
   },
@@ -30,7 +33,8 @@ const instructors = [
     id: 4,
     name: "Alice Johnson",
     email: "alicejohnson@example.com",
-    image: "https://source.unsplash.com/featured/?developer[4]",
+    image:
+      "https://images.unsplash.com/photo-1498814217031-5a856f4a18ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTY4NjMxMDk1OA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     numClassesTaken: 1,
     classesTaken: ["Digital Marketing"],
   },
@@ -38,7 +42,8 @@ const instructors = [
     id: 5,
     name: "Tom Hanks",
     email: "tomhanks@example.com",
-    image: "https://source.unsplash.com/featured/?developer[5]",
+    image:
+      "https://images.unsplash.com/photo-1607970420862-385a245239a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTY4NjMxMTIzOA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     numClassesTaken: 2,
     classesTaken: ["Hacking", "Cyber Security"],
   },
@@ -46,7 +51,8 @@ const instructors = [
     id: 6,
     name: "hamid khan",
     email: "hamidkhan@example.com",
-    image: "https://source.unsplash.com/featured/?developer[6]",
+    image:
+      "https://images.unsplash.com/photo-1605379399582-21f603abaed5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTY4NjMxMTMzOQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     numClassesTaken: 2,
     classesTaken: ["Expressjs", "Mongodb"],
   },

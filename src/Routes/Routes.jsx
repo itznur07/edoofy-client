@@ -2,6 +2,7 @@ import React from "react";
 
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
+import Classes from "../Pages/Classes/Classes";
 import Home from "../Pages/Home/Home";
 import InstructorsPage from "../Pages/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/instructors",
         element: <InstructorsPage></InstructorsPage>,
+      },
+      {
+        path: "/classes",
+        element: <Classes></Classes>,
       },
       {
         path: "/login",
