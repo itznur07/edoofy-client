@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
           <div className='flex items-center'>
             {/* Website Logo */}
             <Link to='/' className='flex items-center'>
-              <span className='text-2xl font-bold text-[#49BBBD]'>Edoofy</span>
+              <img className="w-32" src={logo} alt='logo' />
             </Link>
           </div>
           <div className='flex items-center space-x-4'>
