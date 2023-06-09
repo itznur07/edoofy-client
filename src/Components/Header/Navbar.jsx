@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   return (
     <nav className='bg-white shadow-lg'>

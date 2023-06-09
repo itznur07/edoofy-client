@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
+import { AuthContext } from "../../Providers/AuthContext";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
+  const { createUserWithEmailPassword } = useContext(AuthContext);
+
   useTitle("Create an account");
   const loginImg =
     "https://images.unsplash.com/photo-1604872441539-ef1db9b25f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80";
@@ -13,6 +17,7 @@ const Signup = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -33,7 +38,6 @@ const Signup = () => {
     // If all checks pass, return true
     return true;
   };
-
   // Confirm password validation function
   const validateConfirmPassword = (confirmPassword) => {
     // Get the value of the password field
@@ -47,13 +51,25 @@ const Signup = () => {
   };
 
   const handleSignUp = ({ email, password, name, photo }) => {
-    const userInfo = {
-      email,
-      password,
-      name,
-      photo,
-    };
-    console.log(userInfo);
+    createUserWithEmailPassword(email, password)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Congratulations!🎊",
+          text: "Your registration successfull!",
+          confirmButtonText: "Awesome!",
+          confirmButtonColor: "#49BBBD",
+          iconColor: "text-green-500",
+          customClass: {
+            title: "text-green-500 text-3xl",
+            text: "text-slate-500",
+          },
+        });
+        reset();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
