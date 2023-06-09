@@ -40,8 +40,8 @@ const Testimonials = () => {
 
   const settings = {
     slidesPerView: 3,
-    spaceBetween: 30,
     loop: true,
+    spaceBetween: 30,
     pagination: {
       clickable: true,
     },

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const TestimonialCard = ({ image, name, feedback }) => {
   return (
@@ -14,7 +15,10 @@ const TestimonialCard = ({ image, name, feedback }) => {
         />
         <div className='absolute bottom-0 left-0 right-0 px-6 py-4 bg-white  items-center justify-between'>
           <div className='font-bold text-xl text-purple-600'>{name}</div>
-          <p className='text-gray-700 text-base'>"{feedback}"</p>
+          <p className='text-gray-700 text-base flex items-center'>
+            <FaQuoteLeft className='text-yellow-400 mr-2' />
+            {feedback}
+          </p>
         </div>
       </div>
     </div>
