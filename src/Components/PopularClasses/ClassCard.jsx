@@ -3,7 +3,7 @@ import React from "react";
 const ClassCard = ({ cls }) => {
   console.log(cls);
   return (
-    <div className='md:mx-0 mx-5 rounded overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer'>
+    <div className='md:mx-0 mx-5 rounded overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer '>
       <div className='w-full h-64 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500'>
         <img
           className='w-full h-full object-cover opacity-75'
