@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "../../Components/Banner/Banner";
+import ContactUs from "../../Components/Contact/Contact";
 import PopularClass from "../../Components/PopularClasses/PopularClass";
 import PopularInstructors from "../../Components/PopularInstructors/PopularInstructors";
 import Testimonials from "../../Components/Testimonials/Testimonials";
@@ -14,6 +15,7 @@ const Home = () => {
       <PopularClass></PopularClass>
       <PopularInstructors></PopularInstructors>
       <Testimonials></Testimonials>
+      <ContactUs></ContactUs>
     </>
   );
 };
