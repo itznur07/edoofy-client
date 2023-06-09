@@ -1,11 +1,34 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthContext";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [user, setUser] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Logout",
+          text: "You logout successfull!",
+          confirmButtonText: "Awesome!",
+          confirmButtonColor: "#49BBBD",
+          iconColor: "text-green-500",
+          customClass: {
+            title: "text-green-500 text-3xl",
+            text: "text-slate-500",
+          },
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <nav className='bg-white'>
@@ -14,7 +37,7 @@ const Navbar = () => {
           <div className='flex items-center'>
             {/* Website Logo */}
             <Link to='/' className='flex items-center'>
-              <img className="w-32" src={logo} alt='logo' />
+              <img className='w-32' src={logo} alt='logo' />
             </Link>
           </div>
           <div className='flex items-center space-x-4'>
@@ -46,11 +69,17 @@ const Navbar = () => {
                 <>
                   <Link
                     to='/dashboard'
-                    className='text-gray-500 hover:bg-blue-500 hover:text-white px-3 py-2 text-md font-medium rounded'
+                    className='text-gray-500 hover:text-[#49BBBD] px-3 py-2 text-md  font-medium  rounded'
                   >
                     Dashboard
                   </Link>
                   <FaUserCircle size={24} />
+                  <button
+                    onClick={handleSignOut}
+                    className='bg-[#49BBBD] hover:bg-[#005759] text-white px-3 py-1.5 text-md font-medium rounded'
+                  >
+                    Logout
+                  </button>
                 </>
               ) : (
                 <Link
