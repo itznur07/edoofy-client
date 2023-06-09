@@ -5,14 +5,13 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../../Providers/AuthContext";
+import login from "../../assets/login.svg";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
   const { createUserWithEmailPassword } = useContext(AuthContext);
 
   useTitle("Create an account");
-  const loginImg =
-    "https://images.unsplash.com/photo-1604872441539-ef1db9b25f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80";
 
   const {
     register,
@@ -75,14 +74,14 @@ const Signup = () => {
   return (
     <div className='flex  max-w-7xl mx-auto justify-center pb-3 items-center'>
       <div>
-        <img src={loginImg} alt='person' />
+        <img className='max-w-xl' src={login} alt='login' />
       </div>
       <form
         onSubmit={handleSubmit(handleSignUp)}
         className='bg-white py-10 px-28 '
       >
         <h2 className='text-3xl text-center font-semibold text-gray-800 mb-8'>
-          Create an account
+          Sign Up
         </h2>
         <div className='mb-4'>
           <label htmlFor='name' className='block text-gray-700 font-bold mb-2'>

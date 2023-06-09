@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
+import login from "../../assets/login.svg";
 
 const Login = () => {
   useTitle("Login");
   const [show, setShow] = useState(false);
 
-  const loginImg =
-    "https://images.unsplash.com/photo-1604872441539-ef1db9b25f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80";
+ 
 
   const {
     register,
@@ -24,7 +24,7 @@ const Login = () => {
   return (
     <div className='flex max-w-7xl mx-auto justify-center py-14 items-center'>
       <div>
-        <img className='rounded' src={loginImg} alt='person' />
+        <img className='max-w-xl' src={login} alt='person' />
       </div>
       <form
         onSubmit={handleSubmit(handleSignIn)}
