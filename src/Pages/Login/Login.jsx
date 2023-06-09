@@ -1,24 +1,44 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
+import { AuthContext } from "../../Providers/AuthContext";
 import login from "../../assets/login.svg";
 
 const Login = () => {
   useTitle("Login");
   const [show, setShow] = useState(false);
-
- 
+  const { logInUserWithEmailPassword } = useContext(AuthContext);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const handleSignIn = (data) => {
-    console.log(data);
+  const handleSignIn = ({ email, password }) => {
+    logInUserWithEmailPassword(email, password)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Congratulations!🎊",
+          text: "You login successfull!",
+          confirmButtonText: "Awesome!",
+          confirmButtonColor: "#49BBBD",
+          iconColor: "text-green-500",
+          customClass: {
+            title: "text-green-500 text-3xl",
+            text: "text-slate-500",
+          },
+        });
+        reset();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
