@@ -76,7 +76,7 @@ const Signup = () => {
             type='name'
             name='name'
             id='name'
-            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent ${
+            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 ${
               errors.name ? "border-red-500" : ""
             }`}
             {...register("name", {
@@ -96,7 +96,7 @@ const Signup = () => {
             type='email'
             name='email'
             id='email'
-            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent ${
+            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 ${
               errors.email ? "border-red-500" : ""
             }`}
             {...register("email", {
@@ -120,7 +120,7 @@ const Signup = () => {
             type={`${show === true ? "text" : "password"}`}
             name='password'
             id='password'
-            className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent ${
+            className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 ${
               errors.password ? "border-red-500" : ""
             }`}
             {...register("password", {
@@ -150,7 +150,7 @@ const Signup = () => {
             type={`${show === true ? "text" : "password"}`}
             name='confirmPassword'
             id='confirmPassword'
-            className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent ${
+            className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 ${
               errors.password ? "border-red-500" : ""
             }`}
             {...register("confirmPassword", {
@@ -173,7 +173,7 @@ const Signup = () => {
             type='text'
             name='photo'
             id='photo'
-            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent ${
+            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2  focus:ring-[#49BBBD]  focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 ${
               errors.photo ? "border-red-500" : ""
             }`}
             {...register("photo", {

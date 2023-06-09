@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
-  useTitle("Login")
+  useTitle("Login");
   const [show, setShow] = useState(false);
 
   const loginImg =
@@ -41,7 +41,7 @@ const Login = () => {
             type='email'
             name='email'
             id='email'
-            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent ${
+            className={`w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 ${
               errors.email ? "border-red-500" : ""
             }`}
             {...register("email", {
@@ -65,7 +65,7 @@ const Login = () => {
             type={`${show === true ? "text" : "password"}`}
             name='password'
             id='password'
-            className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent ${
+            className={`relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 ${
               errors.password ? "border-red-500" : ""
             }`}
             {...register("password", {
@@ -110,7 +110,7 @@ const Login = () => {
           >
             <FaGoogle />
           </button>
-          <button type="button" className='p-3 rounded bg-slate-100'>
+          <button type='button' className='p-3 rounded bg-slate-100'>
             <FaLinkedin />
           </button>
         </div>
