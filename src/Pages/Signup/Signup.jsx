@@ -9,7 +9,8 @@ import login from "../../assets/login.svg";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
-  const { createUserWithEmailPassword } = useContext(AuthContext);
+  const { createUserWithEmailPassword, profileUpdate } =
+    useContext(AuthContext);
 
   useTitle("Create an account");
 
@@ -64,6 +65,7 @@ const Signup = () => {
             text: "text-slate-500",
           },
         });
+        profileUpdate(name, photo);
         reset();
       })
       .catch((error) => {

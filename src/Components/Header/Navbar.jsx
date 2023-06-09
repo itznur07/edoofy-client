@@ -73,7 +73,11 @@ const Navbar = () => {
                   >
                     Dashboard
                   </Link>
-                  <FaUserCircle size={24} />
+                  <img
+                    src={user?.photoURL}
+                    className='w-10 rounded-full'
+                    alt='user'
+                  />
                   <button
                     onClick={handleSignOut}
                     className='bg-[#49BBBD] hover:bg-[#005759] text-white px-3 py-1.5 text-md font-medium rounded'
