@@ -70,6 +70,23 @@ const Signup = () => {
             text: "text-slate-500",
           },
         });
+
+        const userInfo = {
+          name,
+          email,
+          role: "student",
+        };
+
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {});
+
         profileUpdate(name, photo);
         navigate(from, { replace: true });
         reset();
