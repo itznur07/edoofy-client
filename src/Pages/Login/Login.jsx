@@ -10,7 +10,8 @@ import login from "../../assets/login.svg";
 const Login = () => {
   useTitle("Login");
   const [show, setShow] = useState(false);
-  const { logInUserWithEmailPassword } = useContext(AuthContext);
+  const { logInUserWithEmailPassword, signInWithGoogle } =
+    useContext(AuthContext);
 
   const {
     register,
@@ -35,6 +36,27 @@ const Login = () => {
           },
         });
         reset();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Congratulations!🎊",
+          text: "You signIn successfull!",
+          confirmButtonText: "Awesome!",
+          confirmButtonColor: "#49BBBD",
+          iconColor: "text-green-500",
+          customClass: {
+            title: "text-green-500 text-3xl",
+            text: "text-slate-500",
+          },
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -125,7 +147,7 @@ const Login = () => {
           </button>
           <button
             type='button'
-            // onClick={handleGoogleSignIn}
+            onClick={handleGoogleSignIn}
             className='p-3 rounded bg-slate-100'
           >
             <FaGoogle />
