@@ -15,6 +15,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthPorvider = ({ children }) => {
+  const [theme, setTheme] = useState("white");
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -61,11 +62,13 @@ const AuthPorvider = ({ children }) => {
   const authInfo = {
     user,
     loading,
+    theme,
+    setTheme,
     createUserWithEmailPassword,
     logInUserWithEmailPassword,
     logOut,
     profileUpdate,
-    signInWithGoogle
+    signInWithGoogle,
   };
 
   return (

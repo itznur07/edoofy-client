@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthContext";
 import logo from "../../assets/logo.png";
+import ThemeToggle from "../ToggleTheme/ToggleTheme";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, theme } = useContext(AuthContext);
 
   const handleSignOut = () => {
     logOut()
@@ -30,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='bg-white'>
+    <nav className={`bg-${theme}`}>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between h-16'>
           <div className='flex items-center'>
@@ -72,6 +73,9 @@ const Navbar = () => {
                   >
                     Dashboard
                   </Link>
+                  <span className='text-gray-500 hover:text-[#49BBBD]  text-md font-medium'>
+                    <ThemeToggle></ThemeToggle>
+                  </span>
                   <img
                     src={user?.photoURL}
                     className='w-10 rounded-full'
@@ -85,12 +89,17 @@ const Navbar = () => {
                   </button>
                 </>
               ) : (
-                <Link
-                  to='/login'
-                  className='text-white bg-[#49BBBD] hover:bg-blue-400 transition duration-300 px-4 py-2 text-md font-medium rounded'
-                >
-                  Login
-                </Link>
+                <>
+                  <span className='text-gray-500 hover:text-[#49BBBD] px-3 py-2 text-md font-medium'>
+                    <ThemeToggle></ThemeToggle>
+                  </span>
+                  <Link
+                    to='/login'
+                    className='text-white bg-[#49BBBD] hover:bg-blue-400 transition duration-300 px-4 py-2 text-md font-medium rounded'
+                  >
+                    Login
+                  </Link>
+                </>
               )}
             </div>
             {/* Mobile menu button */}
@@ -164,6 +173,9 @@ const Navbar = () => {
               >
                 Dashboard
               </Link>
+              <span className='text-gray-500 hover:text-[#49BBBD]  text-md font-medium'>
+                <ThemeToggle></ThemeToggle>
+              </span>
               <img
                 src={user?.photoURL}
                 className='w-10 rounded-full'
