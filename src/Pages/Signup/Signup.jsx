@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../../Providers/AuthContext";
@@ -20,6 +20,11 @@ const Signup = () => {
     reset,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.from?.pathname || "/";
 
   // Password validation function
   const validatePassword = (password) => {
@@ -66,6 +71,7 @@ const Signup = () => {
           },
         });
         profileUpdate(name, photo);
+        navigate(from, { replace: true });
         reset();
       })
       .catch((error) => {
@@ -88,6 +94,7 @@ const Signup = () => {
             text: "text-slate-500",
           },
         });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

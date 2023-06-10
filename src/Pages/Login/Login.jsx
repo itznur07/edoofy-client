@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../../Providers/AuthContext";
@@ -12,13 +12,17 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const { logInUserWithEmailPassword, signInWithGoogle } =
     useContext(AuthContext);
-
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.from?.pathname || "/";
 
   const handleSignIn = ({ email, password }) => {
     logInUserWithEmailPassword(email, password)
@@ -36,9 +40,22 @@ const Login = () => {
           },
         });
         reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode === "auth/wrong-password") {
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Your Password is wrong!",
+            confirmButtonText: "ok!",
+            confirmButtonColor: "#49BBBD",
+          });
+        } else {
+          console.log(errorMessage);
+        }
       });
   };
 
@@ -57,6 +74,7 @@ const Login = () => {
             text: "text-slate-500",
           },
         });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -112,8 +130,6 @@ const Login = () => {
             }`}
             {...register("password", {
               required: "Password Field is required",
-              minLength: 6,
-              pattern: !/[A-Z]/,
             })}
           />
           <span

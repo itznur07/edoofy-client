@@ -8,6 +8,7 @@ import InstructorsPage from "../Pages/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
 import Signup from "../Pages/Signup/Signup";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/classes",
-        element: <Classes></Classes>,
+        element: (
+          <PrivateRoutes>
+            <Classes></Classes>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",
