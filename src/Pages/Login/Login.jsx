@@ -82,9 +82,9 @@ const Login = () => {
   };
 
   return (
-    <div className='flex max-w-7xl mx-auto justify-center py-14 items-center'>
+    <div className='flex  max-w-7xl mx-auto justify-center py-14 items-center'>
       <div>
-        <img className='max-w-xl' src={login} alt='person' />
+        <img className='max-w-xl md:block hidden' src={login} alt='person' />
       </div>
       <form
         onSubmit={handleSubmit(handleSignIn)}

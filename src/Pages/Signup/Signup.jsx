@@ -104,7 +104,7 @@ const Signup = () => {
   return (
     <div className='flex  max-w-7xl mx-auto justify-center pb-3 items-center'>
       <div>
-        <img className='max-w-xl' src={login} alt='login' />
+        <img className='max-w-xl md:block hidden' src={login} alt='login' />
       </div>
       <form
         onSubmit={handleSubmit(handleSignUp)}

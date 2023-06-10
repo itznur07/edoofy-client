@@ -98,7 +98,7 @@ const Footer = () => {
             </ul>
           </div>
           {/* Copyright */}
-          <div className='space-y-2'>
+          <div className='space-y-2 md:mt-0 mt-4'>
             <p className='text-sm font-semibold flex space-x-2'>
               <span className='text-[#49BBBD]'>
                 <FaLocationArrow size={18} />

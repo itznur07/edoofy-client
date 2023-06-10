@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthContext";
@@ -161,11 +160,21 @@ const Navbar = () => {
             <>
               <Link
                 to='/dashboard'
-                className='block text-sm px-3 py-2 text-gray-500 font-medium hover:bg-blue-500 hover:text-white rounded'
+                className='text-gray-500 hover:text-[#49BBBD] px-3 py-2 text-md  font-medium  rounded'
               >
                 Dashboard
               </Link>
-              <FaUserCircle size={24} />
+              <img
+                src={user?.photoURL}
+                className='w-10 rounded-full'
+                alt='user'
+              />
+              <button
+                onClick={handleSignOut}
+                className='bg-[#49BBBD] hover:bg-[#005759] text-white px-3 py-1.5 text-md font-medium rounded'
+              >
+                Logout
+              </button>
             </>
           ) : (
             <Link
