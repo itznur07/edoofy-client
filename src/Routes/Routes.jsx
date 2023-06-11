@@ -5,8 +5,10 @@ import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import Classes from "../Pages/Classes/Classes";
 import EnrolledClasses from "../Pages/Dashboard/EnrolledClass/EnrolledClasses";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import SelectedClasses from "../Pages/Dashboard/SeletedClass/SelectedClasses";
 import Home from "../Pages/Home/Home";
+import AddClassForm from "../Pages/InstructorDashboard/AddClass/AddClass";
 import InstructorsPage from "../Pages/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/enrolledclsses",
         element: <EnrolledClasses></EnrolledClasses>,
+      },
+      {
+        path: "/dashboard/paymenthistory",
+        element: <PaymentHistory></PaymentHistory>,
+      },
+      {
+        path: "/dashboard/instructor/addclass",
+        element: <AddClassForm></AddClassForm>,
       },
     ],
   },
