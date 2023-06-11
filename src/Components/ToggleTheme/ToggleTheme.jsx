@@ -20,12 +20,12 @@ function ThemeToggle() {
   return (
     <button
       type='button'
-      className='text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300'
+      className='text-[#49BBBD]  dark:text-[#49BBBD]  hover:text-[#49BBBD] dark:hover:text-blue-400 transition duration-300'
     >
       {t ? (
         <FaMoon onClick={lightTheme} size={18} />
       ) : (
-        <FaSun onClick={darkTheme} className='animate-spin' />
+        <FaSun onClick={darkTheme} size={24} className='animate-spin' />
       )}
     </button>
   );

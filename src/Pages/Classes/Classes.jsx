@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useTitle from "../../Hooks/useTitle";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 function Classes() {
@@ -53,20 +54,7 @@ function Classes() {
     },
   ]);
   const [user, setUser] = useState(true);
-
-  // useEffect(() => {
-  //   // Fetch the classes data from an API
-  //   axios
-  //     .get("/api/classes")
-  //     .then((res) => setClasses(res.data))
-  //     .catch((err) => console.error(err));
-
-  //   // Fetch the user data from an API
-  //   axios
-  //     .get("/api/user")
-  //     .then((res) => setUser(res.data))
-  //     .catch((err) => console.error(err));
-  // }, []);
+  useTitle("All Classes");
 
   // Check if the user is logged in
   const isLoggedIn = user !== null;

@@ -1,8 +1,10 @@
 import React from "react";
 
 import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import Classes from "../Pages/Classes/Classes";
+import SelectedClasses from "../Pages/Dashboard/SeletedClass/SelectedClasses";
 import Home from "../Pages/Home/Home";
 import InstructorsPage from "../Pages/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
@@ -44,6 +46,16 @@ const router = createBrowserRouter([
   {
     path: "/*",
     element: <NotFound></NotFound>,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "/dashboard/selectedclasses",
+        element: <SelectedClasses></SelectedClasses>,
+      },
+    ],
   },
 ]);
 
