@@ -1,4 +1,5 @@
 import React from "react";
+import ArticleSection from "../../Components/Articles/ArticlesSection";
 import Banner from "../../Components/Banner/Banner";
 import ContactUs from "../../Components/Contact/Contact";
 import PopularClass from "../../Components/PopularClasses/PopularClass";
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner></Banner>
       <PopularClass></PopularClass>
       <PopularInstructors></PopularInstructors>
+      <ArticleSection></ArticleSection>
       <Testimonials></Testimonials>
       <ContactUs></ContactUs>
     </>
