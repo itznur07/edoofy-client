@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import Classes from "../Pages/Classes/Classes";
+import EnrolledClasses from "../Pages/Dashboard/EnrolledClass/EnrolledClasses";
 import SelectedClasses from "../Pages/Dashboard/SeletedClass/SelectedClasses";
 import Home from "../Pages/Home/Home";
 import InstructorsPage from "../Pages/Instructors/Instructors";
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/selectedclasses",
         element: <SelectedClasses></SelectedClasses>,
+      },
+      {
+        path: "/dashboard/enrolledclsses",
+        element: <EnrolledClasses></EnrolledClasses>,
       },
     ],
   },

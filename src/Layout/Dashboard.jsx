@@ -85,7 +85,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link
-                    to='/dashboard/enrolledclasses'
+                    to='/dashboard/enrolledclsses'
                     className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
                   >
                     <span className=''>

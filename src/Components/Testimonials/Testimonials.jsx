@@ -48,7 +48,7 @@ const Testimonials = () => {
 
   return (
     <div className='max-w-7xl mx-auto md:px-0 md:py-0 px-4 py-5 my-10'>
-      <SectionTitle title='What our client say'></SectionTitle>
+      <SectionTitle title='Students Feedback'></SectionTitle>
       <Swiper
       className="mt-10"
         breakpoints={{

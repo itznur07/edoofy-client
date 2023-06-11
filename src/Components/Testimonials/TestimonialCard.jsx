@@ -4,7 +4,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 const TestimonialCard = ({ image, name, feedback }) => {
   return (
     <div
-      className='rounded overflow-hidden shadow animate__animated animate__fadeInUp bg-gradient-to-r from-yellow-400 to-red-500 
+      className='rounded  shadow-lg  bg-gradient-to-r from-yellow-400 to-red-500 
     transform transition duration-500 hover:scale-105'
     >
       <div className='w-full h-72 relative'>
