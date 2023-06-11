@@ -7,15 +7,45 @@ const AddClassForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-
-  const onSubmit = (data) => {
-    // Handle form submission and database update here
-    console.log(data);
-  };
-
   const { user } = useContext(AuthContext);
+
+  const onSubmit = ({
+    className,
+    classImage,
+    instructorName,
+    instructorEmail,
+    availableSeats,
+    price,
+  }) => {
+    const classInfo = {
+      className,
+      classImage,
+      instructorName,
+      instructorEmail,
+      availableSeats,
+      price,
+      status: "pending",
+    };
+
+    /** Post class data in class collections */
+    fetch("http://localhost:3000/classes", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(classInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert("Class added succesfully!");
+        }
+        console.log(data);
+      });
+  };
 
   return (
     <div className='mt-28'>
@@ -79,6 +109,7 @@ const AddClassForm = () => {
                 id='instructorName'
                 readOnly
                 defaultValue={user?.displayName}
+                {...register("instructorName", { required: true })}
                 className='relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105'
               />
             </div>
@@ -93,6 +124,7 @@ const AddClassForm = () => {
                 type='text'
                 id='instructorEmail'
                 readOnly
+                {...register("instructorEmail", { required: true })}
                 defaultValue={user?.email}
                 className='relative w-80 border rounded-lg py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105'
               />
