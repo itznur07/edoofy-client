@@ -45,9 +45,9 @@ const PopularClass = () => {
   return (
     <div>
       {" "}
-      <div className='md:max-w-7xl mx-auto'>
+      <div className='md:max-w-7xl mx-auto mt-5'>
         <SectionTitle title='Popular Classes'></SectionTitle>
-        <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-5 my-5'>
+        <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-5 my-10 mt-10'>
           {classes.map((cls) => (
             <ClassCard cls={cls} key={cls?.name} />
           ))}

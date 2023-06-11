@@ -40,8 +40,7 @@ const Testimonials = () => {
 
   const settings = {
     slidesPerView: 3,
-    loop: true,
-    spaceBetween: 30,
+    spaceBetween: 50,
     pagination: {
       clickable: true,
     },
@@ -50,8 +49,29 @@ const Testimonials = () => {
   return (
     <div className='max-w-7xl mx-auto md:px-0 md:py-0 px-4 py-5 my-10'>
       <SectionTitle title='What our client say'></SectionTitle>
-      <Swiper {...settings} modules={[Pagination, Navigation]}>
-        <div className='grid md:grid-cols-3 grid-cols-1 gap-4'>
+      <Swiper
+      className="mt-10"
+        breakpoints={{
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        }}
+        {...settings}
+        modules={[Pagination, Navigation]}
+      >
+        <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-4 '>
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial?.name}>
               <TestimonialCard key={testimonial.name} {...testimonial} />

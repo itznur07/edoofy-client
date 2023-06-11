@@ -38,7 +38,7 @@ function ArticleSection() {
             <SectionTitle title='Latest Articles'></SectionTitle>
           </h2>
         </div>
-        <div className='grid grid-cols-3 gap-4 mt-10'>
+        <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-4 mt-10'>
           {articles.map((article) => (
             <ArticleCard key={article.title} {...article} />
           ))}

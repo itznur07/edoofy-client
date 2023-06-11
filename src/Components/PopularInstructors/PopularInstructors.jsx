@@ -43,9 +43,9 @@ const PopularInstructors = () => {
   ]);
 
   return (
-    <div className='max-w-7xl mx-auto mt-20 mb-5'>
+    <div className='max-w-7xl mx-auto mt-20 mb-5 '>
       <SectionTitle title='Popular Instructors'></SectionTitle>
-      <div className='grid md:grid-cols-3 gap-5'>
+      <div className='grid md:grid-cols-3 gap-5 my-10'>
         {instructors.map((instructor) => (
           <InstructorCard key={instructor?.name} instructor={instructor} />
         ))}

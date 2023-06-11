@@ -70,9 +70,9 @@ function Classes() {
   };
 
   return (
-    <div className='max-w-7xl mx-auto my-10 md:px-0 px-6'>
+    <div className='max-w-7xl mx-auto my-10 md:px-0 px-6 mt-10'>
       <SectionTitle title='All Classes'></SectionTitle>
-      <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-5'>
+      <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-5 mt-10'>
         {classes.map((c) => (
           <div
             key={c.id}

@@ -60,9 +60,9 @@ const instructors = [
 
 const InstructorsPage = () => {
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className='max-w-7xl mx-auto my-10'>
       <SectionTitle title='Instructors'></SectionTitle>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 my-10 md:mx-0 mx-3'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:mx-0 mx-3 mt-16'>
         {instructors.map((instructor) => (
           <div
             key={instructor.id}
