@@ -30,7 +30,7 @@ const Dashboard = () => {
   });
 
   /** Filtering for exect user */
-  const exectUser = users.filter((u) => u?.email === user?.email);
+  const exectUser = users?.filter((u) => u?.email === user?.email);
 
   /** Sidebar Condition */
   const toggleSidebar = () => {
