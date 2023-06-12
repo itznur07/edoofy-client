@@ -106,7 +106,7 @@ const ManageClasses = () => {
                       onClick={() => openFeedbackModal(classItem.id)}
                       disabled={classItem.status !== "pending"}
                     >
-                     Feedback
+                      Feedback
                     </button>
                   </div>
                 )}
@@ -118,17 +118,18 @@ const ManageClasses = () => {
 
       {feedbackModalOpen && (
         <div className='fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75'>
-          <div className='bg-white p-4 rounded shadow'>
-            <h3 className='text-lg font-bold mb-2'>Send Feedback</h3>
+          <div className=' bg-white p-10 rounded shadow w-96'>
+            <h3 className='text-lg  font-bold mb-3 mt-1 text-slate-500 uppercase'>Send Feedback</h3>
             <textarea
-              className='w-full h-32 border border-gray-300 p-2 mb-2'
+              required
+              className='w-full h-32 border border-gray-300 mb-2 leading-tight focus:outline-none focus:ring-2 focus:ring-[#49BBBD] focus:border-transparent focus:shadow-lg focus:transform focus:transition focus:duration-500 focus:scale-105 rounded-md p-4'
               placeholder='Write your feedback here...'
               value={feedback}
               onChange={handleFeedbackChange}
             ></textarea>
             <div className='flex justify-end'>
               <button
-                className='bg-blue-500 text-white py-1 px-2 rounded'
+                className='bg-[#49BBBD] text-white py-1 px-2 rounded'
                 onClick={submitFeedback}
               >
                 Send
