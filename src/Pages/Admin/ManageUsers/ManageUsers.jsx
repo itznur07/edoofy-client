@@ -9,14 +9,14 @@ const ManageUsers = () => {
 
   /** Get data using tanstack query */
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:3000/users");
+    const res = await fetch("https://server-omega-two.vercel.app/users");
     return res.json();
   });
 
   /** Make instuctor an admin oparetions */
   const makeInstructor = (userId) => {
     // Perform API request or database update to make the user an instructor
-    fetch(`http://localhost:3000/users/${userId}`, {
+    fetch(`https://server-omega-two.vercel.app/users/${userId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const ManageUsers = () => {
 
   const makeAdmin = (userId) => {
     // Perform API request or database update to make the user an admin
-    fetch(`http://localhost:3000/users/${userId}`, {
+    fetch(`https://server-omega-two.vercel.app/users/${userId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

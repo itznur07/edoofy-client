@@ -34,7 +34,7 @@ const AddClassForm = () => {
     };
 
     /** Post class data in class collections */
-    fetch(`http://localhost:3000/classes`, {
+    fetch(`https://server-omega-two.vercel.app/classes`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

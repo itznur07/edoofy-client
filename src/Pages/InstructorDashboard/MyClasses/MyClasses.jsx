@@ -10,7 +10,7 @@ const MyClasses = () => {
 
   /** Get data using tanstack query */
   const { data: classes = [], refetch } = useQuery(["classes"], async () => {
-    const res = await fetch(`http://localhost:3000/classes`);
+    const res = await fetch(`https://server-omega-two.vercel.app/classes`);
 
     return res.json();
   });
@@ -42,13 +42,13 @@ const MyClasses = () => {
               <td className='py-4 px-4 border-b'>{classItem.className}</td>
               <td className='border-b'>
                 <button
-                  className={` py-2 px-4 ${
+                  className={` py-2 px-4 uppercase ${
                     classItem.status === "pending"
-                      ? "bg-[#f39292] text-md text-white rounded font-medium"
+                      ? "text-[#f39292] text-md  rounded font-medium"
                       : classItem.status === "approved"
-                      ? "bg-green-500 text-white font-medium text-md"
+                      ? "text-green-500  font-medium rounded text-md"
                       : classItem.status === "denied"
-                      ? "bg-red-500 text-white font-medium text-md"
+                      ? "text-red-500  font-medium rounded text-md"
                       : ""
                   }`}
                 >

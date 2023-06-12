@@ -77,7 +77,7 @@ const Signup = () => {
           role: "student",
         };
 
-        fetch("http://localhost:3000/users", {
+        fetch("https://server-omega-two.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
