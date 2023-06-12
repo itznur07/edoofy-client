@@ -3,6 +3,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
+import ManageUsers from "../Pages/Admin/ManageUsers/ManageUsers";
 import Classes from "../Pages/Classes/Classes";
 import EnrolledClasses from "../Pages/Dashboard/EnrolledClass/EnrolledClasses";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
@@ -73,8 +74,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/instructor/myclasses",
-        element: <MyClasses></MyClasses>
-      }
+        element: <MyClasses></MyClasses>,
+      },
+      {
+        path: "/dashboard/admin/manageusers",
+        element: <ManageUsers></ManageUsers>,
+      },
     ],
   },
 ]);

@@ -6,7 +6,9 @@ import {
   FaCheck,
   FaHouseUser,
   FaMoneyCheck,
+  FaPersonBooth,
   FaPlusCircle,
+  FaUsersCog,
   FaVideo,
   FaWindowClose
 } from "react-icons/fa";
@@ -49,7 +51,47 @@ const Dashboard = () => {
         {/* Sidebar Navigation */}
         <nav className='px-4 md:mt-5'>
           <ul className='space-y-2'>
-            {/* Sidebar links for admin */}
+            {exectUser[0]?.role === "admin" ? (
+              <>
+                <li>
+                  <Link
+                    to='/dashboard/admin'
+                    className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
+                  >
+                    <span className=''>
+                      <FaHouseUser size={22} />
+                    </span>{" "}
+                    <span>Admin</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to='/dashboard/admin/manageclasses'
+                    className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
+                  >
+                    <span className=''>
+                      <FaPersonBooth size={22} />
+                    </span>{" "}
+                    <span>Manage Classes</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to='/dashboard/admin/manageusers'
+                    className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
+                  >
+                    <span className=''>
+                      <FaUsersCog size={22} />
+                    </span>{" "}
+                    <span>Manage Users</span>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              ""
+            )}
+
+            {/* Sidebar links for instructor */}
             {exectUser[0]?.role === "instructor" ? (
               <>
                 <li>

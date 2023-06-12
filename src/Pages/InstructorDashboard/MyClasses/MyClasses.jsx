@@ -33,7 +33,7 @@ const MyClasses = () => {
           </tr>
         </thead>
         <tbody>
-          {classes.map((classItem) => (
+          {classes?.map((classItem) => (
             <tr key={classItem.id} className='text-center'>
               <td className='py-4 px-4 border-b'>{classItem.className}</td>
               <td
