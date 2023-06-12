@@ -70,13 +70,12 @@ const Signup = () => {
             text: "text-slate-500",
           },
         });
-
         const userInfo = {
           name,
           email,
           role: "student",
+          photoURL: photo,
         };
-
         fetch("https://server-omega-two.vercel.app/users", {
           method: "POST",
           headers: {
@@ -98,7 +97,7 @@ const Signup = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then(() => {
+      .then((result) => {
         Swal.fire({
           icon: "success",
           title: "Congratulations!🎊",
@@ -111,6 +110,17 @@ const Signup = () => {
             text: "text-slate-500",
           },
         });
+        const { displayName, email, photoURL } = result?.user;
+        const userInfo = { name: displayName, email, photoURL, role: "student" };
+        fetch("https://server-omega-two.vercel.app/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {});
         navigate(from, { replace: true });
       })
       .catch((error) => {

@@ -12,7 +12,7 @@ function Classes() {
   /** Data Fecting using axios */
 
   axios
-    .get(` https://server-omega-two.vercel.app/classes`)
+    .get(`https://server-omega-two.vercel.app/classes`)
     .then((response) => {
       // Handle successful response
       const data = response.data;
@@ -42,9 +42,9 @@ function Classes() {
       <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-5 mt-10'>
         {classes?.map((c) => (
           <div
-            key={c.id}
+            key={c._id}
             className={`class-card p-3 rounded-lg  shadow-lg transform transition duration-500 hover:scale-105 ${
-              c.availableSeats === 0 ? "bg-red-100" : "bg-white"
+              c.availableSeats === "0" ? "bg-red-200" : "bg-white"
             }`}
           >
             <img

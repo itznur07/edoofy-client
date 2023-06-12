@@ -13,11 +13,13 @@ import {
   FaWindowClose,
 } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 import { AuthContext } from "../Providers/AuthContext";
 import DashboardNav from "../Shared/DashboardNav/DashboardNav";
 import logo from "../assets/logo.png";
 
 const Dashboard = () => {
+  useTitle("Dashboard")
   const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(true);
 
