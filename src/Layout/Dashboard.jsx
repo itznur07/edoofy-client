@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   /** Get data using tanstack query */
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:3000/users");
+    const res = await fetch("https://server-omega-two.vercel.app/users");
     return res.json();
   });
 

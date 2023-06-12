@@ -1,60 +1,27 @@
+import axios from "axios";
 import React, { useState } from "react";
 import useTitle from "../../Hooks/useTitle";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 function Classes() {
-  const [classes, setClasses] = useState([
-    {
-      id: 1,
-      image: "https://source.unsplash.com/featured/?courses[6]",
-      name: "Yoga for Beginners",
-      instructorName: "Alice Smith",
-      availableSeats: 10,
-      price: 50,
-    },
-    {
-      id: 2,
-      image: "https://source.unsplash.com/featured/?courses[5]",
-      name: "Guitar Lessons",
-      instructorName: "Bob Jones",
-      availableSeats: 0,
-      price: 100,
-    },
-    {
-      id: 3,
-      image: "https://source.unsplash.com/featured/?courses[4]",
-      name: "Photography Basics",
-      instructorName: "Charlie Lee",
-      availableSeats: 5,
-      price: 80,
-    },
-    {
-      id: 4,
-      image: "https://source.unsplash.com/featured/?courses[3]",
-      name: "Cooking Italian Cuisine",
-      instructorName: "Diana Ross",
-      availableSeats: 8,
-      price: 60,
-    },
-    {
-      id: 5,
-      image: "https://source.unsplash.com/featured/?courses[2]",
-      name: "Web Development with React",
-      instructorName: "Evan Green",
-      availableSeats: 3,
-      price: 120,
-    },
-    {
-      id: 6,
-      image: "https://source.unsplash.com/featured/?courses[1]",
-      name: "Spanish for Travelers",
-      instructorName: "Fiona Garcia",
-      availableSeats: 12,
-      price: 40,
-    },
-  ]);
+  const [classes, setClasses] = useState();
+
   const [user, setUser] = useState(true);
   useTitle("All Classes");
+
+  /** Data Fecting using axios */
+
+  axios
+    .get(` https://server-omega-two.vercel.app/classes`)
+    .then((response) => {
+      // Handle successful response
+      const data = response.data;
+      const filteredData = data.filter((cls) => cls?.status === "approved");
+      setClasses(filteredData);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 
   // Check if the user is logged in
   const isLoggedIn = user !== null;
@@ -73,7 +40,7 @@ function Classes() {
     <div className='max-w-7xl mx-auto my-10 md:px-0 px-6 mt-10'>
       <SectionTitle title='All Classes'></SectionTitle>
       <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-5 mt-10'>
-        {classes.map((c) => (
+        {classes?.map((c) => (
           <div
             key={c.id}
             className={`class-card p-3 rounded-lg  shadow-lg transform transition duration-500 hover:scale-105 ${
@@ -81,11 +48,11 @@ function Classes() {
             }`}
           >
             <img
-              src={c.image}
-              alt={c.name}
+              src={c.classImage}
+              alt={c.className}
               className='w-full h-48 object-cover rounded-t-lg'
             />
-            <h2 className='text-2xl font-semibold mt-2'>{c.name}</h2>
+            <h2 className='text-2xl font-semibold mt-2'>{c.className}</h2>
             <p className='text-lg mt-1'>Instructor: {c.instructorName}</p>
             <p className='text-lg mt-1'>Available seats: {c.availableSeats}</p>
             <p className='text-lg mt-1'>Price: ${c.price}</p>

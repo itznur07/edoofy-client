@@ -31,7 +31,7 @@ const ManageClasses = () => {
 
   const submitFeedback = (classId) => {
     // Perform API request or database update to send feedback to the instructor
-    // fetch(`http://localhost:3000/classes/${classId}`, {
+    // fetch(`https://server-omega-two.vercel.app/classes/${classId}`, {
     //   method: "PATCH",
     //   headers: {
     //     "content-type": "application/json",
@@ -62,7 +62,7 @@ const ManageClasses = () => {
 
   const approveClass = (classId) => {
     // Perform API request or database update to approve the class
-    fetch(`https://server-omega-two.vercel.app/${classId}`, {
+    fetch(`https://server-omega-two.vercel.app/classes/${classId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -91,7 +91,7 @@ const ManageClasses = () => {
 
   const denyClass = (classId) => {
     // Perform API request or database update to deny the class
-    fetch(`https://server-omega-two.vercel.app/${classId}`, {
+    fetch(`https://server-omega-two.vercel.app/classes/${classId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
