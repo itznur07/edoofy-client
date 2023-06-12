@@ -10,7 +10,7 @@ import {
   FaPlusCircle,
   FaUsersCog,
   FaVideo,
-  FaWindowClose
+  FaWindowClose,
 } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthContext";

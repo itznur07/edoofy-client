@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../../Providers/AuthContext";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
@@ -43,17 +44,27 @@ const AddClassForm = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("Class added succesfully!");
+          Swal.fire({
+            icon: "success",
+            title: "Success!🎊",
+            text: "Class added successfull!",
+            confirmButtonText: "Awesome!",
+            confirmButtonColor: "#49BBBD",
+            iconColor: "text-green-500",
+            customClass: {
+              title: "text-green-500 text-3xl",
+              text: "text-slate-500",
+            },
+          });
           reset();
         }
-        console.log(data);
       });
   };
 
   return (
     <div className='mt-28'>
       <SectionTitle title='Add Class'></SectionTitle>
-      <div className='max-w-3xl mx-auto mt-10 rounded shadow-inner hover:border-s hover:border-t hover:border-e-0 hover:border-b-0  flex justify-center bg-white border-[#49BBBD] border-e  border-b p-6 hover:shadow-lg '>
+      <div className='max-w-3xl mx-auto mt-10 rounded  flex justify-center bg-white border-[#49BBBD] border-e  border-b p-6 shadow-lg '>
         <form onSubmit={handleSubmit(onSubmit)} className='gap-5'>
           <div className='grid grid-cols-2 gap-5'>
             <div className='mb-4'>

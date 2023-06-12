@@ -3,6 +3,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
+import ManageClasses from "../Pages/Admin/ManageClasses/ManageClasses";
 import ManageUsers from "../Pages/Admin/ManageUsers/ManageUsers";
 import Classes from "../Pages/Classes/Classes";
 import EnrolledClasses from "../Pages/Dashboard/EnrolledClass/EnrolledClasses";
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/admin/manageusers",
         element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: "/dashboard/admin/manageclasses",
+        element: <ManageClasses></ManageClasses>,
       },
     ],
   },
