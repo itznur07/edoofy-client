@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useTitle from "../../Hooks/useTitle";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
@@ -11,17 +11,17 @@ function Classes() {
 
   /** Data Fecting using axios */
 
-  axios
-    .get(`https://server-omega-two.vercel.app/classes`)
-    .then((response) => {
-      // Handle successful response
-      const data = response.data;
-      const filteredData = data.filter((cls) => cls?.status === "approved");
-      setClasses(filteredData);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  useEffect(() => {
+    axios
+      .get(`https://server-omega-two.vercel.app/classes`)
+      .then((response) => {
+        // Handle successful response
+        const data = response.data;
+        const filteredData = data.filter((cls) => cls?.status === "approved");
+        setClasses(filteredData);
+      })
+      .catch((error) => {});
+  }, []);
 
   // Check if the user is logged in
   const isLoggedIn = user !== null;
@@ -62,7 +62,7 @@ function Classes() {
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-[#49BBBD] hover:bg-blue-600"
               }`}
-              onClick={() => handleSelect(c.id)}
+              onClick={() => handleSelect(c)}
               disabled={c.availableSeats === 0 || isAdminOrInstructor}
             >
               {isLoggedIn ? "Select" : "Log in to select"}
