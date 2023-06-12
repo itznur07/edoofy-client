@@ -6,7 +6,7 @@ const InstructorCard = ({ instructor }) => {
       <div className='w-full h-64 bg-gradient-to-r from-green-400 to-blue-500'>
         <img
           className='w-full h-full object-cover opacity-75'
-          src={instructor?.image}
+          src={instructor?.photoURL}
           alt={instructor?.name}
         />
       </div>
@@ -15,9 +15,7 @@ const InstructorCard = ({ instructor }) => {
           {instructor?.name}
         </div>
         <div className='flex items-center text-yellow-400'>
-          <p className='text-gray-700 text-base ml-2'>
-            {instructor?.classes} classes taught
-          </p>
+          <p className='text-gray-700 text-base ml-2'>4 classes taught</p>
         </div>
       </div>
     </div>

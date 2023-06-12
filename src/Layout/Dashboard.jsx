@@ -19,7 +19,7 @@ import DashboardNav from "../Shared/DashboardNav/DashboardNav";
 import logo from "../assets/logo.png";
 
 const Dashboard = () => {
-  useTitle("Dashboard")
+  useTitle("Dashboard");
   const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(true);
 
@@ -57,7 +57,7 @@ const Dashboard = () => {
               <>
                 <li>
                   <Link
-                    to='/dashboard/admin'
+                    to='/dashboard/admin/profile'
                     className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
                   >
                     <span className=''>
@@ -98,7 +98,7 @@ const Dashboard = () => {
               <>
                 <li>
                   <Link
-                    to='/dashboard/instructorhome'
+                    to='/dashboard/instructor/profile'
                     className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
                   >
                     <span className=''>
@@ -140,7 +140,7 @@ const Dashboard = () => {
               <>
                 <li>
                   <Link
-                    to='/dashboard/userhome'
+                    to='/dashboard/student/profile'
                     className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
                   >
                     <span className=''>
@@ -151,7 +151,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link
-                    to='/dashboard/selectedclasses'
+                    to='/dashboard/student/selectedclasses'
                     className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
                   >
                     <span className=''>
@@ -162,7 +162,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link
-                    to='/dashboard/enrolledclsses'
+                    to='/dashboard/student/enrolledclsses'
                     className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
                   >
                     <span className=''>
@@ -173,7 +173,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link
-                    to='/dashboard/paymenthistory'
+                    to='/dashboard/student/paymenthistory'
                     className='flex items-center space-x-2 py-2 px-4 rounded hover:shadow-lg hover:transform hover:transition hover:duration-500 hover:scale-105 cursor-pointer text-[#49BBBD]'
                   >
                     <span className=''>

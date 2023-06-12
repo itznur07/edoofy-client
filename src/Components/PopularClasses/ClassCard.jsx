@@ -6,14 +6,14 @@ const ClassCard = ({ cls }) => {
       <div className='w-full h-64 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500'>
         <img
           className='w-full h-full object-cover opacity-75'
-          src={cls?.image}
-          alt={cls?.name}
+          src={cls?.classImage}
+          alt={cls?.className}
         />
       </div>
       <div className='px-6 py-4 bg-white'>
-        <div className='font-bold text-xl mb-2'>{cls?.name}</div>
+        <div className='font-bold text-xl mb-2'>{cls?.className}</div>
         <p className='text-gray-700 text-base'>
-          {cls?.students} students enrolled
+          {cls?.enrolledStudents} students enrolled
         </p>
       </div>
     </div>

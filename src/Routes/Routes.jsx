@@ -3,14 +3,17 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
+import AdminProfile from "../Pages/Admin/Home/Profile";
 import ManageClasses from "../Pages/Admin/ManageClasses/ManageClasses";
 import ManageUsers from "../Pages/Admin/ManageUsers/ManageUsers";
 import Classes from "../Pages/Classes/Classes";
 import EnrolledClasses from "../Pages/Dashboard/EnrolledClass/EnrolledClasses";
+import StudentProfile from "../Pages/Dashboard/Home/StudentProfile";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import SelectedClasses from "../Pages/Dashboard/SeletedClass/SelectedClasses";
 import Home from "../Pages/Home/Home";
 import AddClassForm from "../Pages/InstructorDashboard/AddClass/AddClass";
+import InstructorProfile from "../Pages/InstructorDashboard/Home/Profile";
 import MyClasses from "../Pages/InstructorDashboard/MyClasses/MyClasses";
 import InstructorsPage from "../Pages/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
@@ -62,16 +65,24 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard/selectedclasses",
+        path: "/dashboard/student/profile",
+        element: <StudentProfile></StudentProfile>,
+      },
+      {
+        path: "/dashboard/student/selectedclasses",
         element: <SelectedClasses></SelectedClasses>,
       },
       {
-        path: "/dashboard/enrolledclsses",
+        path: "/dashboard/student/enrolledclsses",
         element: <EnrolledClasses></EnrolledClasses>,
       },
       {
-        path: "/dashboard/paymenthistory",
+        path: "/dashboard/student/paymenthistory",
         element: <PaymentHistory></PaymentHistory>,
+      },
+      {
+        path: "/dashboard/instructor/profile",
+        element: <InstructorProfile></InstructorProfile>,
       },
       {
         path: "/dashboard/instructor/addclass",
@@ -80,6 +91,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/instructor/myclasses",
         element: <MyClasses></MyClasses>,
+      },
+      {
+        path: "/dashboard/admin/profile",
+        element: <AdminProfile></AdminProfile>,
       },
       {
         path: "/dashboard/admin/manageusers",
