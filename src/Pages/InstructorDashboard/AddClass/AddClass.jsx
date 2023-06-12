@@ -28,10 +28,12 @@ const AddClassForm = () => {
       availableSeats,
       price,
       status: "pending",
+      enrolledStudents: 0,
+      feedback: "",
     };
 
     /** Post class data in class collections */
-    fetch("http://localhost:3000/classes", {
+    fetch(`http://localhost:3000/classes`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -42,6 +44,7 @@ const AddClassForm = () => {
       .then((data) => {
         if (data.insertedId) {
           alert("Class added succesfully!");
+          reset();
         }
         console.log(data);
       });

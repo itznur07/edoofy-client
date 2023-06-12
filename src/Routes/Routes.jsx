@@ -9,6 +9,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import SelectedClasses from "../Pages/Dashboard/SeletedClass/SelectedClasses";
 import Home from "../Pages/Home/Home";
 import AddClassForm from "../Pages/InstructorDashboard/AddClass/AddClass";
+import MyClasses from "../Pages/InstructorDashboard/MyClasses/MyClasses";
 import InstructorsPage from "../Pages/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
         path: "/dashboard/instructor/addclass",
         element: <AddClassForm></AddClassForm>,
       },
+      {
+        path: "/dashboard/instructor/myclasses",
+        element: <MyClasses></MyClasses>
+      }
     ],
   },
 ]);
