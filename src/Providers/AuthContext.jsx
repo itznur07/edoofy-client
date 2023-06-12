@@ -16,7 +16,7 @@ const auth = getAuth(app);
 
 const AuthPorvider = ({ children }) => {
   const [theme, setTheme] = useState("white");
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
 
   /** conmmunication with firebase */

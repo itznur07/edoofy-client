@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
 const ManageUsers = () => {
@@ -13,15 +14,64 @@ const ManageUsers = () => {
   });
 
   /** Make instuctor an admin oparetions */
-
   const makeInstructor = (userId) => {
     // Perform API request or database update to make the user an instructor
-    // Update the user role in the users state or refetch the updated user list
+    fetch(`http://localhost:3000/users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ role: "instructor" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!🎊",
+            text: "Make instructor successfully!",
+            confirmButtonText: "Awesome!",
+            confirmButtonColor: "#49BBBD",
+            iconColor: "text-green-500",
+            customClass: {
+              title: "text-green-500 text-3xl",
+              text: "text-slate-500",
+            },
+          });
+          refetch();
+        }
+      });
+
     setDisabledButtons([...disabledButtons, userId]);
   };
 
   const makeAdmin = (userId) => {
     // Perform API request or database update to make the user an admin
+    fetch(`http://localhost:3000/users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ role: "admin" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!🎊",
+            text: "Make Admin successfully!",
+            confirmButtonText: "Awesome!",
+            confirmButtonColor: "#49BBBD",
+            iconColor: "text-green-500",
+            customClass: {
+              title: "text-green-500 text-3xl",
+              text: "text-slate-500",
+            },
+          });
+          refetch();
+        }
+      });
     // Update the user role in the users state or refetch the updated user list
     setDisabledButtons([...disabledButtons, userId]);
   };
@@ -44,29 +94,33 @@ const ManageUsers = () => {
           </thead>
           <tbody>
             {users?.map((user, i) => (
-              <tr key={user.id} className='text-center'>
+              <tr key={user._id} className='text-center'>
                 <td className='py-2 px-4 border-b'>{i + 1}</td>
                 <td className='py-2 px-4 border-b'>{user.name}</td>
                 <td className='py-2 px-4 border-b'>{user.email}</td>
                 <td className='py-2 px-4 border-b font-bold'>{user.role}</td>
                 <td className='py-2 px-4 border-b'>
-                  {!disabledButtons.includes(user.id) && (
+                  {!disabledButtons.includes(user._id) && (
                     <div>
                       {user?.role === "admin" ? (
                         <button className='bg-[#49BBBD] text-white font-medium py-1 px-2 rounded'>
-                          you / admin
+                          admin not changeable
                         </button>
                       ) : (
                         <div className='space-x-2'>
-                          <button
-                            className={`bg-[#046866] text-white font-medium py-1 px-2 rounded `}
-                            onClick={() => makeInstructor(user.id)}
-                          >
-                            Make Instructor
-                          </button>
+                          {user?.role === "instructor" ? (
+                            ""
+                          ) : (
+                            <button
+                              className={`bg-[#046866] text-white font-medium py-1 px-2 rounded `}
+                              onClick={() => makeInstructor(user._id, user)}
+                            >
+                              Make Instructor
+                            </button>
+                          )}
                           <button
                             className='bg-[#49BBBD] text-white font-medium py-1 px-2 rounded'
-                            onClick={() => makeAdmin(user.id)}
+                            onClick={() => makeAdmin(user._id)}
                           >
                             Make Admin
                           </button>
