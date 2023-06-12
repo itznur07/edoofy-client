@@ -8,6 +8,9 @@ Adventure Hub is a website that helps you find and book exciting classes and act
 
 - Browse popular classes and instructors
 - Register and login with email or social media
+- Authentication Systme
+- Dashboard Systems
+- Rest api
 - Select and pay for classes online
 - View your selected and enrolled classes on your dashboard
 - Add, update, and delete classes as an instructor
@@ -18,6 +21,8 @@ Adventure Hub is a website that helps you find and book exciting classes and act
 - React
 - Tailwind CSS
 - React Router DOM
+- Firebase
+- Mongodb
 - React Hook Form
 - Axios
 - React Query
@@ -25,4 +30,4 @@ Adventure Hub is a website that helps you find and book exciting classes and act
 
 ## Live Site
 
-[https://adventure-hub.netlify.app/](https://adventure-hub.netlify.app/)
+- https://edoofy-13bd9.web.app/
