@@ -9,8 +9,6 @@ function Classes() {
   const [user, setUser] = useState(true);
   useTitle("All Classes");
 
-  /** Data Fecting using axios */
-
   useEffect(() => {
     axios
       .get(`https://server-omega-two.vercel.app/classes`)
@@ -31,9 +29,20 @@ function Classes() {
     user && (user.role === "admin" || user.role === "instructor");
 
   // Handle the select button click
-  const handleSelect = (classId) => {
-    // Redirect the user to the class details page
-    window.location.href = `/classes/${classId}`;
+  const handleSelect = (classInfo) => {
+    fetch(`https://server-omega-two.vercel.app/selectedClass`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(classInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert("Class selected succesfully!");
+        }
+      });
   };
 
   return (
