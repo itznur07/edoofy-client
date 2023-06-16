@@ -30,7 +30,7 @@ function Classes() {
 
   // Handle the select button click
   const handleSelect = (classInfo) => {
-    fetch(`https://server-omega-two.vercel.app/selectedClass`, {
+    fetch(`https://server-omega-two.vercel.app/selectedclasses`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
