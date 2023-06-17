@@ -1,14 +1,17 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useTitle from "../../Hooks/useTitle";
+import { AuthContext } from "../../Providers/AuthContext";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 function Classes() {
   const [classes, setClasses] = useState();
 
-  const [user, setUser] = useState(true);
+  const { user } = useContext(AuthContext);
+
   useTitle("All Classes");
 
+  /** Axios for fatching classes data */
   useEffect(() => {
     axios
       .get(`https://server-omega-two.vercel.app/classes`)
@@ -21,21 +24,35 @@ function Classes() {
       .catch((error) => {});
   }, []);
 
-  // Check if the user is logged in
-  const isLoggedIn = user !== null;
-
-  // Check if the user is an admin or an instructor
-  const isAdminOrInstructor =
-    user && (user.role === "admin" || user.role === "instructor");
-
   // Handle the select button click
-  const handleSelect = (classInfo) => {
+  const handleSelect = ({
+    className,
+    classImage,
+    price,
+    instructorName,
+    instructorEmail,
+    availableSeats,
+    status,
+    enrolledStudents,
+  }) => {
+    const classData = {
+      className,
+      classImage,
+      price,
+      instructorEmail,
+      instructorName,
+      availableSeats,
+      status,
+      enrolledStudents,
+      selectorEmail: user?.email,
+    };
+
     fetch(`https://server-omega-two.vercel.app/selectedclasses`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(classInfo),
+      body: JSON.stringify(classData),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -67,14 +84,14 @@ function Classes() {
             <p className='text-lg mt-1'>Price: ${c.price}</p>
             <button
               className={`select-button w-full py-2 rounded-b-lg text-white font-bold mt-2 ${
-                c.availableSeats === 0 || isAdminOrInstructor
+                c.availableSeats === 0
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-[#49BBBD] hover:bg-blue-600"
               }`}
               onClick={() => handleSelect(c)}
-              disabled={c.availableSeats === 0 || isAdminOrInstructor}
+              disabled={c.availableSeats === 0}
             >
-              {isLoggedIn ? "Select" : "Log in to select"}
+              {user?.email ? "Select" : "Log in to select"}
             </button>
           </div>
         ))}

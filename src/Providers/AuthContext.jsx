@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -18,6 +19,20 @@ const AuthPorvider = ({ children }) => {
   const [theme, setTheme] = useState("white");
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
+  const [dbUsers, setDbUsers] = useState([]);
+
+  /** Database Users */
+
+  useEffect(() => {
+    axios
+      .get(`https://server-omega-two.vercel.app/users`)
+      .then((response) => {
+        // Handle successful response
+        const data = response.data;
+        setDbUsers(data);
+      })
+      .catch((error) => {});
+  }, []);
 
   /** conmmunication with firebase */
   const createUserWithEmailPassword = (email, password) => {
@@ -63,6 +78,7 @@ const AuthPorvider = ({ children }) => {
     user,
     loading,
     theme,
+    dbUsers,
     setTheme,
     createUserWithEmailPassword,
     logInUserWithEmailPassword,
