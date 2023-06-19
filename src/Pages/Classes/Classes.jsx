@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../../Providers/AuthContext";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
@@ -57,7 +58,18 @@ function Classes() {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("Class selected succesfully!");
+          Swal.fire({
+            icon: "success",
+            title: "Class Selected!",
+            text: "Your class selected successfull!",
+            confirmButtonText: "Ok",
+            confirmButtonColor: "#49BBBD",
+            iconColor: "text-green-500",
+            customClass: {
+              title: "text-green-500 text-3xl",
+              text: "text-slate-500",
+            },
+          });
         }
       });
   };

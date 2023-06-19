@@ -1,8 +1,11 @@
-# Adventure Hub
-
 # Edoofy
 
-Adventure Hub is a website that helps you find and book exciting classes and activities.
+## Admin Pass and Email
+
+- edoofyadmin@gmail.com
+- <$Edoofy/>
+
+Edoofy is a website that helps you find and book exciting classes and activities.
 
 ## Features
 

@@ -9,6 +9,7 @@ import ManageUsers from "../Pages/Admin/ManageUsers/ManageUsers";
 import Classes from "../Pages/Classes/Classes";
 import EnrolledClasses from "../Pages/Dashboard/EnrolledClass/EnrolledClasses";
 import StudentProfile from "../Pages/Dashboard/Home/StudentProfile";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import SelectedClasses from "../Pages/Dashboard/SeletedClass/SelectedClasses";
 import Home from "../Pages/Home/Home";
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/student/enrolledclsses",
         element: <EnrolledClasses></EnrolledClasses>,
+      },
+      {
+        path: "/dashboard/student/payment",
+        element: <Payment></Payment>,
       },
       {
         path: "/dashboard/student/paymenthistory",

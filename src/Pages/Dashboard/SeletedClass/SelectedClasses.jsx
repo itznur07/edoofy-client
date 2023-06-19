@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { FaMoneyBill, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Providers/AuthContext";
 
@@ -35,9 +36,9 @@ const SelectedClasses = () => {
         if (data.deletedCount > 0) {
           Swal.fire({
             icon: "success",
-            title: "Classes Deleted!",
+            title: "Class Deleted!",
             text: "You classes deleted successfull!",
-            confirmButtonText: "Awesome!",
+            confirmButtonText: "ok!",
             confirmButtonColor: "#49BBBD",
             iconColor: "text-green-500",
             customClass: {
@@ -99,12 +100,11 @@ const SelectedClasses = () => {
                       >
                         <FaTrash></FaTrash>
                       </button>
-                      <button
-                        className='bg-[#49BBBD] text-white py-2 px-4 rounded  flex items-center space-x-2'
-                        //   onClick={() => removeFromCart(item._id)}
-                      >
-                        <FaMoneyBill></FaMoneyBill> <span>Pay</span>
-                      </button>
+                      <Link to='/dashboard/student/payment'>
+                        <button className='bg-[#49BBBD] text-white py-2 px-4 rounded  flex items-center space-x-2'>
+                          <FaMoneyBill></FaMoneyBill> <span>Pay</span>
+                        </button>
+                      </Link>
                     </div>
                   </td>
                 </tr>
