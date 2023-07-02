@@ -50,13 +50,24 @@ const SelectedClasses = () => {
       });
   };
 
+  const total = selectedClasses.reduce(
+    (total, sClass) => parseFloat(sClass?.price) + total,
+    0
+  );
+
   return (
     <div>
       {/* For Cart Page Headings here  */}
-      <div className='flex items-center justify-between container mx-auto p-4 uppercase'>
+      <div className='flex items-center justify-between container mx-auto p-4 uppercase '>
         <h1 className='text-xl font-bold'>
           Total Courses: {selectedClasses?.length}
         </h1>
+        <h1 className='text-xl font-bold'>Total Cost: ${total}</h1>
+        <Link to='/dashboard/student/payment'>
+          <button className='px-4 py-2 bg-[#49BBBD] rounded text-white'>
+            Pay
+          </button>
+        </Link>
       </div>
       {/* For Cart Page Headings ends here */}
 
